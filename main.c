@@ -44,6 +44,7 @@ int main()
     }
     printBoard();
     printWinner(winner);
+    printf("1");
 
     }
 
