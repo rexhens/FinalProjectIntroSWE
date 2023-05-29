@@ -45,6 +45,13 @@ int main()
     printBoard();
     printWinner(winner);
 
+    }else if(playmentMeth==2)
+    {
+        printf("2 player mode!");
+    }else {
+        printf("Invalid input!\n"
+        "Please enter valid input!");
+
     }
 
     return 0;
