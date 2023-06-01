@@ -22,7 +22,9 @@ void printWinner (char);
 
 int main()
 {
+    int playAgain;
     printTicTacToe();
+     do{
     printf("Press 1 to play vs Computer \n");
     printf("Press 2 for Multiplayer mode \n");
     printf("Enter the play method:");
@@ -86,6 +88,11 @@ int main()
         "Please enter valid input!");
 
     }
+    printf("Press 1 to play again: ");
+    scanf("%d",&playAgain);
+    } while (playAgain==1);
+    
+    
 
     return 0;
 }
