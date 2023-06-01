@@ -1,9 +1,10 @@
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <ctype.h>
-#include<time.h>
+#include <time.h>
 
-int getNumber();
+int getNum();
 void printTicTacToe();
 char board[3][3];
 const char PLAYER = 'X';
@@ -14,7 +15,8 @@ void resetBoard();
 void printBoard();
 int checkFreeSpaces();
 void playerMove ();
-void computerMove();
+void playerMove2 ();
+void computerMove ();
 char checkWinner();
 void printWinner (char);
 
@@ -27,10 +29,9 @@ int main()
     int playmentMeth = getNum();
     if(playmentMeth==1)
     {
-        printTicTacToe();
     char winner = ' ';
     resetBoard();
-    while(winner==' ' && checkFreeSpaces!=0){
+        while(winner==' ' && &checkFreeSpaces!=0){
 
         printBoard();
   printf("\n Press 0 to excit the game!\n");
@@ -48,6 +49,38 @@ int main()
     }else if(playmentMeth==2)
     {
         printf("2 player mode!");
+        
+    char winner = ' ';
+    resetBoard();
+        while(winner==' ' && &checkFreeSpaces!=0){
+            
+            printBoard();
+            printf("\n Press 0 to excit the game!\n");
+            playerMove();
+            winner=checkWinner();
+            if(winner!=' ' || checkFreeSpaces()==0){
+                break;
+            }
+            printBoard();
+            playerMove2();
+            winner=checkWinner();
+            if(winner!=' ' || checkFreeSpaces()==0){
+                break;
+            }
+        }
+        
+        printBoard();
+        
+        if(winner==PLAYER){
+            printf("PLAYER 1 WINS");
+        }
+        else if(winner== COMPUTRER){
+            printf("PLAYER 2 WINS");
+        }
+        else{
+            printf("TIE");
+        }
+
     }else {
         printf("Invalid input!\n"
         "Please enter valid input!");
@@ -88,7 +121,7 @@ void resetBoard(){
 void printBoard(){
     printf(" %c | %c | %c ",board[0][0],board[0][1],board[0][2]);
     printf("\n---|---|--- \n");
-    printf(" % c | %c | %c ",board[1][0],board[1][1],board[1][2]);
+    printf(" %c | %c | %c ",board[1][0],board[1][1],board[1][2]);
     printf("\n---|---|--- \n");
     printf(" %c | %c | %c ",board[2][0],board[2][1],board[2][2]);
  //   printf("\n---|---|--- \n");
@@ -129,6 +162,30 @@ void playerMove (){
     while(board[x][y] != ' ' );
 
 };
+
+void playerMove2 (){
+    int x,y;
+    do{
+        printf("\n Enter the row you want to move 1-3:  "  );
+        scanf("%d",&x);
+        x--;
+
+        printf("Enter the column you want to move 1-3:  ");
+        scanf("%d",&y);
+        y--;
+
+        if(board[x][y]!= ' ' ){
+            printf("Invalid Input");
+        }
+        else{
+            board[x][y]= COMPUTRER;
+            break;
+        }
+    }
+    while(board[x][y] != ' ' );
+
+};
+
 void computerMove(){
     //creates a seed based on current time
     srand(time(0));
