@@ -1,4 +1,4 @@
-# FinalProjectIntroSWE
+
 TicTacToe Project
 This is a collaborative project for implementing the game of TicTacToe in the C programming language. The project has two contributors: Rexhens and Suljon. The goal of this project is to create a functional and interactive game of TicTacToe that can be played in the terminal.
 
@@ -9,7 +9,7 @@ Prerequisites
 To run this project, you need to have a C compiler installed on your system. If you don't have one, you can download and install GCC (GNU Compiler Collection).
 
 Installing
-To get a local copy of the project, you can clone the repository by running the following command: git clone: https://github.com/rexhens/FinalProjectIntroSWE.git
+To get a local copy of the project, you can clone the repository by running the following command: git clone: https://github.com/rexhens/TicTacToe.git
 
 Usage
 1-Navigate to the project directory.
